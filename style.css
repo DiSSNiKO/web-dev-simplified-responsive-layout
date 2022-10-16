@@ -1,0 +1,218 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(https://fonts.google.com/specimen/Roboto) format('woff2');
+}
+
+body {
+    margin: 0 auto;
+    padding-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 50px;
+    padding: 0 40px;
+    grid-template-areas: ". con con con con .";
+}
+
+.darkHeaderGrid {
+    background-color: #005681;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    grid-area: con;
+}
+
+.content h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+.darkHeaderDivider {
+    background-image: url("imges/wave.svg");
+    height: 170px;
+    margin-top: -5px;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.lightHeaderGrid {
+    color: white;
+    background-color: #00AAFF;
+    padding-top: 300px;
+    margin-top: -300px;
+    padding-bottom: 2rem;
+}
+
+.lightHeaderDivider {
+    background-image: url("imges/wave2.svg");
+    height: 220px;
+    margin-top: -20px;
+    background-size: cover;
+}
+
+.emailForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    font-size: 1.75rem;
+}
+
+.emailForm input {
+    color: #005681;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0.5em;
+    pad: 0.5em 1em;
+    margin-right: 1em;
+    outline: none;
+    flex-grow: 1;
+}
+
+.emailForm input:focus {
+    background-color: rgb(223, 236, 236);
+}
+
+.emailForm button {
+    background-color: black;
+    color: white;
+    border-radius: 0.5em;
+    border: 1px solid white;
+}
+
+.emailForm button:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+.section1 {
+    grid-template-areas: 'mio mio mio benefits benefits benefits';
+    margin-top: 50px;
+    align-items: start;
+}
+
+.benefits {
+    grid-area: benefits;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section1 img {
+    grid-area: mio;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 5px 5px 15px 0px black;
+}
+
+.benefits li {
+    font-size: 3.25rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+}
+
+.section2 {
+    margin-top: 4rem;
+}
+
+.benefitDetail {
+    grid-column: span 2;
+}
+
+.benefitDetTitle {
+    font-size: 1.75rem;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.benefitDetContent {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+@media screen and (max-width: 1059px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: "con";
+    }
+
+    .section1 {
+        grid-template-areas: "mio" "benefits";
+        /* row 1 is mio row 2 are benefits */
+    }
+
+    .section1 img {
+        justify-self: center;
+    }
+
+    .benefits {
+        justify-self: center;
+    }
+
+    .section2 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .benefitDetail {
+        grid-column: span 1;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .section2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .benefitDetTitle {
+        font-size: 1.5rem;
+        text-align: center;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    .benefitDetContent {
+        font-size: 1.25rem;
+        font-weight: lighter;
+    }
+
+    .benefits li {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 3rem;
+        margin-top: 1.5rem;
+    }
+
+    .emailForm {
+        flex-direction: column;
+    }
+
+    .emailForm button {
+        margin-top: 2rem;
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+    }
+}
